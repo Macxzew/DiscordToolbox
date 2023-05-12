@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DiscordToolbox - Gérez vos Webhooks Discord</title>
+  <link rel="icon" type="image/png" href="assets/img/discord.png">
+  <link href="https://fonts.googleapis.com/css2?family=Whitney:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><h1>DiscordToolbox</h1></li>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="webhook.html">Gérer les Webhooks</a></li>
+          <li><a href="token.html">Vérifier le Token</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <div class="container">
+      <!-- Formulaire pour soumettre un message Discord -->
+      <form id="discord-form">
+        <div class="form-group">
+          <label for="webhook-url">Webhook URL:</label>
+          <input type="text" id="webhook-url" name="webhook-url" required>
+        </div>
+
+        <div class="form-group">
+          <label for="content-type">Type de contenu:</label>
+          <select id="content-type" name="content-type" required>
+            <option value="message">Message</option>
+            <option value="embed">Embed</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="message-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+        </div>
+
+        <div class="form-group hidden" id="embed-group">
+          <label for="embed-title">Titre:</label>
+          <input type="text" id="embed-title" name="embed-title">
+  
+          <label for="embed-description">Description:</label>
+          <textarea id="embed-description" name="embed-description" rows="4" cols="50"></textarea>
+  
+          <label for="embed-thumbnail">Miniature URL:</label>
+          <input type="text" id="embed-thumbnail" name="embed-thumbnail">
+  
+          <label for="embed-image">Image URL:</label>
+          <input type="text" id="embed-image" name="embed-image">
+  
+          <div class="discord-color-label">
+            <label for="embed-color">Couleur:</label>
+            <input type="color" id="embed-color" name="embed-color">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Envoyer le message</button>
+        </div>
+
+        <!-- Élément pour afficher la réponse de la soumission du formulaire -->
+        <div id="response" class="hidden"></div>
+      </form>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 <a href="https://github.com/shwzr">Showzur</a></p>
+    </div>
+  </footer>
+  
+  <!-- Script JavaScript pour la soumission du formulaire -->
+  <script src="assets/js/webhook.js"></script>
+</body>
+</html>

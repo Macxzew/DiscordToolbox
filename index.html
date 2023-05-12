@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DiscordToolbox</title>
+    <link rel="icon" type="image/png" href="assets/img/discord.png">
+    <link href="https://fonts.googleapis.com/css2?family=Whitney:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><h1>DiscordToolbox</h1></li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="webhook.html">Gérer les Webhooks</a></li>
+            <li><a href="token.html">Vérifier le Token</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <h2>Bienvenue sur DiscordToolbox</h2>
+        <p>Cet outil vous permet de gérer vos webhooks Discord, de tester votre token et bien plus encore.</p>
+        <p>Pour commencer, choisissez l'une des options ci-dessous :</p>
+        <ul>
+          <li><a href="webhook.html">Gérer les Webhooks</a></li>
+          
+        </ul>
+        <ul>
+          <li><a href="token.html">Tester le Token</a></li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 <a href="https://github.com/shwzr">Showzur</a></p>
+      </div>
+    </footer>
+    <script>
+      // Fonction pour définir un cookie
+      function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+      }
+
+      // Fonction pour récupérer la valeur d'un cookie
+      function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+      }
+
+      // Vérifie si un cookie "visited" existe
+      if (!getCookie("visited")) {
+        // Si non, définit le cookie et affiche une alerte de bienvenue
+        setCookie("visited", true, 365);
+        alert("Bienvenue sur DiscordToolbox !");
+      }
+    </script>
+  </body>
+</html>

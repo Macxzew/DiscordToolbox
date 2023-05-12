@@ -1,3 +1,4 @@
+// Récupération des éléments du DOM
 const form = document.getElementById('discord-form');
 const previewContent = document.getElementById('preview-content');
 const response = document.getElementById('response');
@@ -5,10 +6,14 @@ const contentTypeSelect = document.getElementById('content-type');
 const messageGroup = document.getElementById('message-group');
 const embedGroup = document.getElementById('embed-group');
 
+// Écouteur d'événement pour mettre à jour l'aperçu lorsqu'un champ est modifié
 form.addEventListener('input', updatePreview);
+// Écouteur d'événement pour envoyer le message lors de la soumission du formulaire
 form.addEventListener('submit', sendMessage);
+// Écouteur d'événement pour basculer les champs en fonction du type de contenu sélectionné
 contentTypeSelect.addEventListener('change', toggleContentFields);
 
+// Fonction pour mettre à jour l'aperçu en fonction des valeurs des champs
 function updatePreview(event) {
   const selectedOption = contentTypeSelect.value;
 
@@ -23,17 +28,18 @@ function updatePreview(event) {
     const embedColor = document.getElementById('embed-color').value;
 
     const embedPreview = `
-      Titre: ${embedTitle}
-      Description: ${embedDescription}
-      Miniature: ${embedThumbnail}
-      Image: ${embedImage}
-      Couleur: ${embedColor}
+      Titre : ${embedTitle}
+      Description : ${embedDescription}
+      Miniature : ${embedThumbnail}
+      Image : ${embedImage}
+      Couleur : ${embedColor}
     `;
 
     previewContent.innerText = embedPreview;
   }
 }
 
+// Fonction pour envoyer le message
 function sendMessage(event) {
   event.preventDefault();
 
@@ -71,6 +77,7 @@ function sendMessage(event) {
     };
   }
 
+  // Envoi de la requête fetch pour envoyer le message via un webhook
   fetch(url, {
     method: 'POST',
     headers: {
@@ -78,29 +85,32 @@ function sendMessage(event) {
     },
     body: JSON.stringify(payload)
   })
-  .then(response => {
-    if (response.ok) {
-      showResponse('success', 'Message envoyé !');
-    } else {
-      showResponse('error', 'Une erreur est survenue.');
-    }
-  })
-  .catch(error => showResponse('error', error.message));
+    .then(response => {
+      if (response.ok) {
+        showResponse('success', 'Message envoyé !');
+      } else {
+        showResponse('error', 'Une erreur est survenue.');
+      }
+    })
+    .catch(error => showResponse('error', error.message));
 
   updatePreview();
 }
 
+// Fonction pour afficher la réponse
 function showResponse(type, message) {
   response.className = type;
   response.innerText = message;
   response.classList.remove('hidden');
 }
 
+// Fonction pour masquer la réponse
 function hideResponse() {
   response.classList.add('hidden');
   response.innerText = '';
 }
 
+// Fonction pour basculer les champs en fonction du type de contenu sélectionné
 function toggleContentFields() {
   const selectedOption = contentTypeSelect.value;
 

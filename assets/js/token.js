@@ -25,7 +25,7 @@ function vérifierToken() {
             }, 2500);
           `;
           
-          // Display the user information in the HTML
+          // Afficher les informations relatives à l'utilisateur dans le code HTML
           document.getElementById("result").innerHTML = `
             <div class="profile">
               <div class="avatar-wrapper">
@@ -95,12 +95,12 @@ function executeScript() {
   const scriptTextarea = document.querySelector(".script textarea");
   const script = scriptTextarea.value;
 
-  // Open Discord login page in a new window
+  // Ouvrir la page de connexion Discord dans une nouvelle fenêtre
   const discordLoginUrl = "https://discord.com/login";
   const windowFeatures = "width=600,height=800";
   const windowRef = window.open(discordLoginUrl, "_blank", windowFeatures);
 
-  // Execute the script in the console after a small delay
+  // Exécuter le script dans la console après un petit délai
   setTimeout(() => {
     windowRef.eval(script);
   }, 1000);

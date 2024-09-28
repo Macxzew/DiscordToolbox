@@ -1,7 +1,7 @@
 <h1 align="center">DiscordToolbox</h1>
 
 <p>
-  <a href="https://twitter.com/Showzur" target="_blank">
+  <a href="https://twitter.com/Macxzew" target="_blank">
     <img alt="Twitter: Showzur" src="https://img.shields.io/twitter/follow/Showzur.svg?style=social" />
   </a>
 </p>
@@ -29,6 +29,6 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2023 [Showzur](https://github.com/shwzr).<br />
+Copyright © 2023 [Showzur](https://github.com/Macxzew).<br />
 
 ***

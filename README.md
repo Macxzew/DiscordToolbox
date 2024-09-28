@@ -20,8 +20,8 @@ To use this project, you can simply open the index.html file in your preferred w
 **Showzur**
 
 * SRV Discord: [Shynonime](https://discord.gg/UHy8mZsNh8)
-* Twitter: [@Showzur](https://twitter.com/Macxzew)
-* Github: [@shwzr](https://github.com/Macxzew)
+* Twitter: [@Macxzew](https://twitter.com/Macxzew)
+* Github: [@Macxzew](https://github.com/Macxzew)
 
 ## Show your support
 
@@ -29,6 +29,6 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2023 [Showzur](https://github.com/Macxzew).<br />
+Copyright © 2023 [Macxzew](https://github.com/Macxzew).<br />
 
 ***

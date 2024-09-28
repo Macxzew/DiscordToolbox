@@ -2,7 +2,7 @@
 
 <p>
   <a href="https://twitter.com/Macxzew" target="_blank">
-    <img alt="Twitter: Showzur" src="https://img.shields.io/twitter/follow/Showzur.svg?style=social" />
+    <img alt="Twitter: Macxzew" src="https://img.shields.io/twitter/follow/Macxzew.svg?style=social" />
   </a>
 </p>
 
